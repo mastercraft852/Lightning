@@ -11,6 +11,11 @@ void setup()
 }
 void draw()
 {
+  for(int i=0;i<10;i++)
+    lightningStrike();
+}
+
+void lightningStrike(){
   stroke((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
   while(endX<width+1){
     endX=startX+(int)(Math.random()*10);
@@ -18,15 +23,19 @@ void draw()
     line(startX,startY,endX,endY);
     startX=endX;
     startY=endY;
-  }
 
 }
-void mousePressed()
-{ 
-  startX = 0;
+ startX = 0;
   startY=0;
   endX=width;
   endY=height;
+} 
+void mousePressed()
+{ 
+//   startX = 0;
+//   startY=0;
+//   endX=width;
+//   endY=height;
   noStroke();
   fill(0,0,0);
   rect(0,0,1000,1000);
